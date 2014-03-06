@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<section>
+This is a section.
+</section>
+
+<script type="text/javascript">
+  var data = [4, 8, 15, 16, 23, 42];
+
+  var div = document.createElement("div");
+  div.innerHTML = "Hello, world!";
+  document.body.appendChild(div);
+
+  // selection
+  var body = d3.select("body");
+  var div = body.append("div");
+  div.html("Goodbuy, world!");
+
+  var section = d3.selectAll("section");
+  var div = section.append("div"); // hmmm seem to be able to redeclare var
+  div.html("Hello, galaxy!")
+
+  // method chaining
+  d3.select("body")
+    .style("color", "red")
+    .style("background-color", "yellow");
+
+  // The recommended indentation pattern for method chaining is four spaces for methods that preserve the current selection and two spaces for methods that change the selection.
+  // selection.append returns a new selection containing the new elements.
+  d3.selectAll("section")
+    .attr("class", "special")
+  .append("div")
+    .html("Hello, gerbil!");
+  
+
+</script>
+</body>
+</html>
